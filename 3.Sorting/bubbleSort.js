@@ -1,5 +1,5 @@
 //Problem Statement: Given an array of N integers, write a program to implement the Bubble Sorting algorithm.
-//Bubble sort: Find the max element of array in 1st pass and place it in decreasing order of aeeay index
+//Bubble sort: Find the max element of array in 1st pass and place it in decreasing order of array index
 function bubbleSort(inputArray) {
     //Start from the end of array
     for(let j = inputArray.length-1; j > 0; j--) {
