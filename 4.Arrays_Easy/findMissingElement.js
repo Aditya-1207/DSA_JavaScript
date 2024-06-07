@@ -3,14 +3,23 @@
 //N = 5, array[] = {1,2,4,5} => outout : 3
 
 function findMissingElement(array,expectedSize) {
+    //1.Brute force : only applicable if elements are sorted
+    // for (let i=1;i<= expectedSize; i++) {
+    //     if(array[i-1] != i){
+    //         return i;
+    //     }
+    // }
+    //2.Summation approach
+    let sum = expectedSize*(expectedSize+1)/2;
+    let arraySum =0;
 
-    for (let i=1;i<= expectedSize; i++) {
-        if(array[i-1] != i){
-            return i;
-        }
+    for (let index = 0; index < array.length; index++) {
+        arraySum = arraySum+array[index];        
     }
+    return sum-arraySum;   
+
 }
 
-let array = [1,2,4,5];
-let expectedSize = 5;
+let array = [1,0,3];
+let expectedSize = array.length;
 console.log(findMissingElement(array,expectedSize));
