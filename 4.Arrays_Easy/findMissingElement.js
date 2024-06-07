@@ -10,14 +10,22 @@ function findMissingElement(array,expectedSize) {
     //     }
     // }
     //2.Summation approach
-    let sum = expectedSize*(expectedSize+1)/2;
-    let arraySum =0;
+    // let sum = expectedSize*(expectedSize+1)/2;
+    // let arraySum =0;
 
-    for (let index = 0; index < array.length; index++) {
-        arraySum = arraySum+array[index];        
+    // for (let index = 0; index < array.length; index++) {
+    //     arraySum = arraySum+array[index];        
+    // }
+    // return sum-arraySum;
+    //3.XOR Approach  Most Optimised
+    let XOR1 = 0;
+    let XOR2 = 0; 
+    
+    for (let index = 0; index < expectedSize; index++) {
+        XOR1 ^= index+1;
+       XOR2 = XOR2 ^ array[index];        
     }
-    return sum-arraySum;   
-
+    return XOR1^XOR2;
 }
 
 let array = [1,0,3];
