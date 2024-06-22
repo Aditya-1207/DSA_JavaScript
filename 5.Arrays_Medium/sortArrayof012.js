@@ -33,18 +33,14 @@ function sortArrayof012 (array) {
     let mid = 0;
     let right = array.length-1;
 
-    while (mid <= right) {
-        console.log("array[mid] is ",array[mid]);
-        if(array[mid] == 0) {
-            console.log("inside 0");
+    while (mid <= right) {       
+        if(array[mid] == 0) {           
             swap(array,left,mid);  
             left++;
             mid++;
-        } else if(array[mid] == 1) {
-            console.log("inside 1");
+        } else if(array[mid] == 1) {            
             mid++;
-        } else {
-            console.log("inside 2");
+        } else {            
             swap(array,mid,right);            
             right--;
         }        
@@ -59,5 +55,4 @@ function swap(array,start,end) {
 }
 
 let array = [2,0,2,1,1,2];
-
 console.log(sortArrayof012(array));
