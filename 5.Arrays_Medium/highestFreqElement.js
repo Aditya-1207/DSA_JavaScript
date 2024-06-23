@@ -5,23 +5,41 @@ let array = [3,2,3];
 console.log(highestFreqElement(array));
 
 function highestFreqElement(array){
-    let highestFreq = Math.floor(array.length/2)+1;    
-    let freqMap = new Map();
-    let i=0;
+    let highestFreq = Math.floor(array.length/2)+1; 
+    //1.Brute force   
+    // let freqMap = new Map();
+    // let i=0;
 
-    while(i< array.length){       
-        if(freqMap.has(array[i])){                  
-            freqMap.set(array[i],freqMap.get(array[i])+1);
-        } else{
-            freqMap.set(array[i],1);
-        }      
-        i++; 
-    }
+    // while(i< array.length){       
+    //     if(freqMap.has(array[i])){                  
+    //         freqMap.set(array[i],freqMap.get(array[i])+1);
+    //     } else{
+    //         freqMap.set(array[i],1);
+    //     }      
+    //     i++; 
+    // }
 
-    for (const [key,value] of freqMap) {        
-        if(value >= highestFreq){
-            return key;
+    // for (const [key,value] of freqMap) {        
+    //     if(value >= highestFreq){
+    //         return key;
+    //     }
+    // }
+
+    //2.Optimised Approach : Moore's Voting Algorithm
+    let element = 0;
+    let count = 0;
+
+    for (const n of array) {
+        if(count == 0){
+            element = n;
         }
+        if(element == n){
+            count++;
+        } else {
+            count--;
+        }      
     }
+
+    return element;  
 
 }
