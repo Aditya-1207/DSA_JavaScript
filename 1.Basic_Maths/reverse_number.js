@@ -1,4 +1,5 @@
 //Problem Statement: Given an integer N return the reverse of the given number.
+//Make sure you consider negative numbers as well
 
 function reverse_num(num) {
     let reverse = 0 ;
